@@ -1,0 +1,301 @@
+@import "vars";
+
+body{
+    margin:0;
+    .title{
+        font-family: $familyTitles;
+        font-size: $sizeTitle;
+    }
+    .subtitle{
+        font-family: $familyTitles;
+        font-size: $sizeSubtitle;
+    }
+    p{
+        font-family: $familyText;
+        font-size: $sizeText;
+    }
+    a{
+        font-family: $familyTitles;
+        font-size: $sizeLink;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        border-bottom: $borderLink;
+    }
+}
+.encabezado{
+    width: $widthEncabezado;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: $borderEncabezado;
+    &__logo{
+        img{
+            width: $widthLogo;    
+        }
+        
+    }
+    &__menu{
+        display: none;
+    }
+    &__bars{
+        font-size: $sizeBars;
+        padding: $paddingBars;
+        color: $colorBars;
+    }
+}
+
+.mainContent{  
+    width: $widthMainContent;
+    margin: $marginMainContent;
+    &__titles{
+        margin-bottom: $marginTitles;
+        .title{
+            letter-spacing: $spaceTitle;
+            margin: $marginTitle;
+
+        }
+        .subtitle{
+            letter-spacing: $spaceSubtitle;
+        }
+    }
+
+
+    &__sub{
+        .cuadros{
+            img{
+                width: $widthCuadros;
+                padding: 0;
+            }
+        }
+
+        .texto{
+            .subtitle{
+                margin: $marginTextoImg;
+            }
+            p{
+                border-left: $borderTextoImg;
+                padding-left: $paddingTextImg;
+            }
+        }
+
+        .showMore{
+            border: $borderShowMore;
+            background-color: $backColorShowMore;
+            width: $widthShowMore;
+            p{
+                font-size: $sizeShowMore;
+                text-align: center;
+                font-family: $familyTitles;
+            }
+           
+        }
+
+        .photos{
+            .title{
+                margin-top: $marginPhotos;
+                letter-spacing: $spacePhotos;
+            }
+            .link{
+                margin-bottom: $marginLinkPhotos;
+            }
+            .imagePhotos{
+                img{
+                    width: $widthImgPhotos;
+                    display: block;
+                    margin: auto;
+                }
+            }
+        }
+    }
+} 
+
+
+    .footer{
+        width: $widthFooter;
+        margin: $marginFooter;
+        &__follow{
+            background-color: $backColorFollow;
+            text-align: center;
+            color: white;
+            .cuadrante{
+                padding: $paddingCuadrantes;
+                .subtitle{
+                    letter-spacing: $spaceSubtitleCuadrantes;
+                    font-weight: normal;
+                }
+                .text_footer{
+                    font-family: $familyTitles;
+                }
+                a{
+                    color: white;                   
+                }
+                .twitter, .facebook, .instagram{
+                    border-bottom: none;
+                }
+
+                i{
+                    font-size: $sizeIcons;
+                    margin: $marginIcons;
+                }
+
+                .fa-twitter{
+                    color: $colorTwitter;
+                    
+                }
+                .fa-facebook{
+                    color: $colorFacebook;
+                }
+                .fa-instagram{
+                    color: $colorInstagram;
+                }
+            }
+        }
+
+        &__subscribe{
+            background-color: $backColorSubscribe;
+            padding: $paddingSubscribe;
+            h5{
+                margin: 0;
+                letter-spacing: $spaceSubscribeH5;
+                padding: $paddingSubscribeH5;
+            }
+            .col1{
+                
+                .signup{
+                    background-color: $backColorSignup;
+                    border: none;
+                    font-size: $sizeSignup;
+                }
+                .email{
+                    border: $borderEmail;
+                    font-size: $sizeEmail;
+                    margin-bottom: $marginBottomEmail;
+                }
+            }
+            .col2{
+                margin-top: $borderTopCol2;
+                .subtitle{
+                    margin-bottom: $marginBottonCol2;
+                }
+            }
+           
+        }
+
+
+    }
+
+
+
+
+@media screen and (min-width:768px) {
+    .mainContent{
+        &__sub{
+            .cuadros{
+                margin-bottom: 2%;
+                display: flex;
+                .imagen{
+                    flex: 1;
+                }
+                .texto{
+                    flex: 1;
+                    margin: 1%;
+                    p{
+                        border: none;
+                        padding: 1%;
+                    }
+                }
+            }
+        }
+
+        .showMore{
+            width: 70%;
+            display: block;
+            margin: auto;
+            
+        }
+    }
+
+    .footer{
+        h5{
+            font-size: 16px;
+        }
+        &__follow{
+           display: flex;
+           flex-wrap: wrap; 
+           .cuadrante{
+               padding: 4%;
+               width: 42%;
+                i{
+                font-size: 40px;
+                }
+           }
+           
+        }
+        &__subscribe{
+            padding: 0 0 5% 3%;
+            display: flex;
+            h5{
+                font-size: 28px;
+            }
+            .col1{
+                padding-left: 2%;
+                flex:2;
+                align-self: baseline;
+                border-left: 2px solid #aaa;
+            }
+            .col2{
+                flex: 1;
+                align-self: baseline;
+                padding-left: 2%;
+                border-left: 2px solid #aaa;
+                margin-top: 30px;
+            }
+        }
+
+    }
+
+
+}
+
+@media screen and (min-width: 1024px){
+    .encabezado{
+        &__bars{
+            display: none;
+        }
+        &__menu{
+            display: block;
+            
+            ul{
+                display: flex;
+                list-style: none;
+                color: #aaaaaa;
+                li{
+                    padding: 4px 70px;
+                    border-left: 2px solid #fecd2f;
+                } 
+            }
+        }
+    }
+
+    .mainContent{
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .footer{
+        &__follow{
+            flex-wrap: nowrap;
+            .cuadrante{
+                padding: 4%;
+                h4{
+                font-size: 16px;
+                }
+            }
+        }
+        &__subscribe{
+            h5{
+                font-size: 24px;
+            }
+        }
+    }
+} 
